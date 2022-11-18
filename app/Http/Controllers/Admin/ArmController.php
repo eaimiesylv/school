@@ -36,7 +36,15 @@ class ArmController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $request->validate([
+            'clas_id'=>'required',
+            'armname'=>'required',
+            'added_by'=>'',
+           
+    
+    
+          ]);
+            return Arm::create($request->all());
     }
 
     /**

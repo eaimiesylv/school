@@ -13,17 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('subjects', function (Blueprint $table) {
+        Schema::create('subject_orders', function (Blueprint $table) {
             $table->id();
-            $table->string('subject');
+            $table->unsignedBigInteger('subject_id');
             $table->unsignedBigInteger('clas_id');
-            $table->unsignedBigInteger('arm_id')->nullabe();
-            $table->string('shortname',20)->nullable();
-            $table->unsignedBIgInteger('added_by');
+            $table->unsignedBigInteger('arm_id')->nullable();
+            $table->unsignedBigInteger('session_id')->nullable();
+            $table->tinyInteger('order');
+            $table->unsignedBigInteger('added_by');
             $table->timestamps();
-
-            $table->index('clas_id');
-            $table->index('arm_id');
         });
     }
 
@@ -34,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subjects');
+        Schema::dropIfExists('subject_orders');
     }
 };

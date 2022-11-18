@@ -17,7 +17,8 @@ return new class extends Migration
              $table->id();
             $table->string('title');
             $table->string('description');
-            $table->string('image');
+            $table->string('image')->nullable();
+            $table->unsignedBIgInteger('session_id');
             $table->unsignedBIgInteger('added_by');
             $table->timestamps();
         });

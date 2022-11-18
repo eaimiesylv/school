@@ -36,7 +36,16 @@ class SubjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'subject'=>'required',
+            'clas_id'=>'required',
+            'arm_id'=>'',
+            'shortname'=>'required',
+			'added_by'=>''
+    
+    
+          ]);
+            return Subject::create($request->all());
     }
 
     /**

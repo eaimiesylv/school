@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('hcomment');
             $table->string('hcriteria');
+            $table->tinyInteger('added_by');
             $table->boolean('third_term')->default(false);
         });
     }

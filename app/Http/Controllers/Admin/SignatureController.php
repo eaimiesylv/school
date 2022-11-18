@@ -36,7 +36,14 @@ class SignatureController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'teacher_id'=>'required',
+            'session_id'=>'required',
+            'clas_id'=>'required',
+            'arm_id'=>'',
+			 'signature_img'=>'required',
+          ]);
+          return Signature::create($request->all());
     }
 
     /**

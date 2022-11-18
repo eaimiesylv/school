@@ -36,7 +36,19 @@ class ScoreController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id'=>'required',
+            'score'=>'required',
+            'assessment_id'=>'required',
+            'subject_id'=>'required',
+            'clas_id'=>'required',
+            'session_id'=>'required',
+            'unique_std_score'=>'required',
+            'added_by'=>'',
+          
+    
+          ]);
+            return Score::updateOrCreate(['uniqscore'=>$request['uniqscore']],$request->all());
     }
 
     /**

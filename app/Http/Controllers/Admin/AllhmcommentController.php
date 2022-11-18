@@ -36,7 +36,14 @@ class AllhmcommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'hcomment'=>'required',
+            'hcriteria'=>'required',
+            'third_term'=>'required',
+            'added_by'=>'',
+           
+          ]);
+          return Allocation::create($request->all());
     }
 
     /**

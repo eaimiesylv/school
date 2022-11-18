@@ -36,7 +36,14 @@ class SessionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'year'=>'required',
+            'term'=>'required',
+			'added_by'=>''
+  
+  
+          ]);
+            return Session::create($request->all());
     }
 
     /**

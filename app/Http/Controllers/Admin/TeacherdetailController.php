@@ -36,7 +36,33 @@ class TeacherdetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'marital'=>'required',
+			'dob'=>'required',
+            'phone'=>'required',  
+            'otherphone'=>'required',
+			'jobsection'=>'required',
+            'language'=>'required',
+            'school'=>'required',
+            'discipline'=>'required',
+			 'qualification'=>'required',
+            'subjects'=>'required',
+            'graduationyear'=>'required',
+            'bankname'=>'required',
+			'accname'=>'required',
+			'accno'=>'required',
+            'prevwork'=>'required',
+            'workposition'=>'required',
+            'workduration'=>'required',
+			  'reason'=>'required',
+            'experience'=>'required',
+            'worklength'=>'required',
+            'user_id'=>'required',
+			  
+    
+    
+          ]);
+            return Teacherdetail::firstorcreate($request->all());
     }
 
     /**

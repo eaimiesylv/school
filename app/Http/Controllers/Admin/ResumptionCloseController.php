@@ -36,7 +36,15 @@ class ResumptionCloseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'start'=>'required',
+            'end'=>'required',
+          
+            'session_id'=>'required',
+            'added_by'=>'',
+    
+          ]);
+            return Resumption_close::updateOrCreate($request->all());
     }
 
     /**

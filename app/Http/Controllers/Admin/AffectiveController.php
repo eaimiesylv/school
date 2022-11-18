@@ -36,7 +36,22 @@ class AffectiveController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'user_id'=>'required',
+            'punctuality'=>'required',
+            'neat'=>'required',
+            'behaviour'=>'required',
+            'lead'=>'required',
+			'help'=>'required',
+            'emotion'=>'required',
+            'health'=>'required',
+            'attitude'=>'required',
+			'attentive'=>'required',
+            'spoken'=>'required',
+			'acaclass'=>'required',
+			'added_by'=>''
+          ]);
+          return Affective::FirstOrCreate($request->all());
     }
 
     /**

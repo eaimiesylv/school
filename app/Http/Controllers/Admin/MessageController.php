@@ -36,7 +36,13 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'subject_id'=>'required',
+            'clas_id'=>'required',
+            'mergename'=>'required',
+            'acaclass'=>'required'
+          ]);
+          return Merges::create($request->all());
     }
 
     /**

@@ -36,7 +36,17 @@ class PsychomotorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'user_id'=>'required',
+            'verbal'=>'required',
+            'sports'=>'required',
+            'tools'=>'required',
+			'drawing'=>'required',
+            'music'=>'required',
+			 'acaclass'=>'required',
+			 'added_by'=>''
+          ]);
+          return Lock::create($request->all());
     }
 
     /**

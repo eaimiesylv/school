@@ -36,7 +36,14 @@ class MergeresultController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'subject_id'=>'required',
+            'clas_id'=>'required',
+            'mergename'=>'required',
+            'acaclass'=>'required',
+			'added_by'=>''
+          ]);
+          return Merges::create($request->all());
     }
 
     /**

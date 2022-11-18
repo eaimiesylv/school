@@ -36,7 +36,13 @@ class HmcommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'user_id'=>'required',
+            'allhmcomment_id'=>'required',
+            'acaclass'=>'required',
+            'added_by'=>''
+          ]);
+          return Hmcomment::create($request->all());
     }
 
     /**

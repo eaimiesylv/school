@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('subject_id');
             $table->unsignedBigInteger('clas_id');
+            $table->unsignedBigInteger('arm_id')->nullable();
             $table->string('mergename');
             $table->string('acaclass');
             $table->unsignedBIgInteger('added_by');

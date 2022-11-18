@@ -36,7 +36,16 @@ class AssessmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'assessname'=>'required',
+            'min'=>'required',
+            'max'=>'required',
+            'session_id'=>'required',
+			'added_by'=>''
+    
+    
+          ]);
+            return Assessment::create($request->all());
     }
 
     /**

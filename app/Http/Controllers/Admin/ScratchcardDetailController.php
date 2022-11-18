@@ -36,7 +36,19 @@ class ScratchcardDetailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'cardno'=>'required',
+            'serialno'=>'required',
+            'user_id'=>'required',
+			 'count'=>'required',
+            'climit'=>'required',
+            'lockstate'=>'required',
+			 'session_id'=>'required',
+            'clas_id'=>'required',
+            'added_by'=>'',
+          ]);
+  
+          return Scratchcard_detail::create($request->all());
     }
 
     /**

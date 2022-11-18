@@ -36,7 +36,13 @@ class ClasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'classname'=>'required',
+            'added_by'=>''
+
+
+          ]);
+            return Clas::create($request->all());
     }
 
     /**

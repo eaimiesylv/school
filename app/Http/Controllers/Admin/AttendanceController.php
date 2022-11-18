@@ -36,7 +36,16 @@ class AttendanceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'user_id'=>'required',
+            'open'=>'required',
+			 'punc'=>'required',
+            'present'=>'required',
+			'added_by'=>'',
+
+
+          ]);
+            return Attendance::create($request->all());
     }
 
     /**

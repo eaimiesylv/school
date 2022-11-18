@@ -36,7 +36,24 @@ class StudentBiodataController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nationality'=>'required',
+            'state'=>'required',
+            'lga'=>'required',
+            'address'=>'required',
+			  'dob'=>'required',
+            'challenge'=>'required',
+            'pfullname'=>'required',
+            'fathernumber'=>'required',
+			  'mothernumber'=>'required',
+            'poccupation'=>'required',
+            'lastschool'=>'required',
+            'departurereason'=>'required',
+			'user_id'=>'required'
+    
+    
+          ]);
+            return Student_biodata::firstorcreate($request->all());
     }
 
     /**

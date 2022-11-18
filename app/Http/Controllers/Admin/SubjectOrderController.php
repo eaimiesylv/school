@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
-use App\Models\Comment;
+use App\Models\Subject_order;
 use Illuminate\Http\Request;
 
-class CommentController extends Controller
+class SubjectOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -37,20 +37,25 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'teacher_comment'=>'required',
-            'added_by'=>'required',
-           
+            'subject_id'=>'required',
+            'clas_id'=>'required',
+            'arm_id'=>'',
+            'session_id'=>'required',
+            'order'=>'required',
+			'added_by'=>''
+    
+    
           ]);
-          return Comment::create($request->all());
+            return Subject_order::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Models\Subject_order  $subject_order
      * @return \Illuminate\Http\Response
      */
-    public function show(Comment $comment)
+    public function show(Subject_order $subject_order)
     {
         //
     }
@@ -58,10 +63,10 @@ class CommentController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Models\Subject_order  $subject_order
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit(Subject_order $subject_order)
     {
         //
     }
@@ -70,10 +75,10 @@ class CommentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Models\Subject_order  $subject_order
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Comment $comment)
+    public function update(Request $request, Subject_order $subject_order)
     {
         //
     }
@@ -81,10 +86,10 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Comment  $comment
+     * @param  \App\Models\Subject_order  $subject_order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comment $comment)
+    public function destroy(Subject_order $subject_order)
     {
         //
     }

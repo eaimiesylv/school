@@ -36,7 +36,14 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'description'=>'required',
+            'image'=>'',
+            'session_id'=>'required',
+			'added_by'=>''
+          ]);
+          return Merges::create($request->all());
     }
 
     /**

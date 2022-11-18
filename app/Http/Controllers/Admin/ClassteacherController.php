@@ -36,7 +36,16 @@ class ClassteacherController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'teacher_id'=>'required',
+            'session_id'=>'required',
+            'clas_id'=>'required',
+            'arm_id'=>'required',
+            'state'=>'required',
+			'added_by'=>''
+  
+          ]);
+          return Classteacher::create($request->all());
     }
 
     /**

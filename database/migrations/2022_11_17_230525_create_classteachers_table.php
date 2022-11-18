@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('teacher_id');
             $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('clas_id');
-            $table->unsignedBigInteger('arm_id');
+            $table->unsignedBigInteger('arm_id')->nullable();
             $table->unsignedBIgInteger('added_by');
            
          

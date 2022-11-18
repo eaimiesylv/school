@@ -36,7 +36,21 @@ class SessionRecordController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+			'status'=>'required',
+			'session_id'=>'required',
+            'user_id'=>'required',
+			'clas_id'=>'required',
+			 'arm_id'=>'',
+			 'added_by'=>''
+          
+           
+           
+           
+           
+  
+          ]);
+          return Students::create($request->all());
     }
 
     /**

@@ -36,7 +36,13 @@ class ResultlockController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'lock'=>'required',
+            'session_id'=>'required',
+            'added_by'=>'required'
+          
+          ]);
+          return Resultlock::create($request->all());
     }
 
     /**

@@ -36,7 +36,13 @@ class TeachercommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+            'user_id'=>'required',
+            'comment_id'=>'required',
+            'acaclass'=>'required',
+            'added_by'=>''
+          ]);
+          return Teachercomment::create($request->all());
     }
 
     /**

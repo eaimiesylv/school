@@ -18,14 +18,14 @@ return new class extends Migration
             $table->unsignedBigInteger('teacher_id');
             $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('clas_id');
-            $table->unsignedBigInteger('arm_id');
+            $table->unsignedBigInteger('arm_id')->nullable();
             $table->string('signature_img',20);
            
          
             $table->index('session_id');
             $table->index('teacher_id');
             $table->index('clas_id');
-            $table->index('arm_id');
+           
             $table->timestamps();
         });
     }

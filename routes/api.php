@@ -46,4 +46,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin',
       Route::apiResource('comment', 'CommentController');
       Route::apiResource('events', 'EventController');
       Route::apiResource('hm_comment', 'HmcommentController');
+      Route::apiResource('user', 'UserController');
+      Route::apiResource('resumption_close', 'ResumptionCloseController');
+      Route::apiResource('subject_order', 'SubjectOrderController');
     });

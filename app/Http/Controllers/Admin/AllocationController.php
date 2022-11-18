@@ -36,7 +36,15 @@ class AllocationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+           
+            'teacher_id'=>'required',
+            'session_id'=>'required',
+            'subject_id'=>'required',
+            'clas_id'=>'required',
+			'added_by'=>'',
+          ]);
+          return Allocation::create($request->all());
     }
 
     /**

@@ -20,11 +20,12 @@ return new class extends Migration
             $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('clas_id');
-            $table->unsignedBigInteger('arm_id');
+            $table->unsignedBigInteger('arm_id')->nullable();
+            $table->unsignedBigInteger('added_by');
             
             $table->index('session_id');
             $table->index('clas_id');
-            $table->index('arm_id');
+    
             $table->index('user_id');
 
             $table->timestamps();
