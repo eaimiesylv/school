@@ -1,4 +1,4 @@
-Project Description
+#Project Description
 
 This is a result management software for secondary school. Teachers are expected to only enter scores of students and the softwares automatically process the students results
 
