@@ -49,4 +49,5 @@ Route::group(['namespace' => 'App\Http\Controllers\Admin', 'prefix' => 'admin',
       Route::apiResource('user', 'UserController');
       Route::apiResource('resumption_close', 'ResumptionCloseController');
       Route::apiResource('subject_order', 'SubjectOrderController');
+      Route::apiResource('registered_subject', 'RegisteredSubjectController');
     });

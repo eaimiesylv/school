@@ -13,19 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('allocations', function (Blueprint $table) {
+        Schema::create('registered_subjects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('teacher_id');
-            $table->unsignedBigInteger('register_subject_id');
-            $table->unsignedBigInteger('session_id');
             $table->unsignedBigInteger('subject_id');
             $table->unsignedBigInteger('clas_id');
-            $table->unsignedBIgInteger('added_by');
-
-            $table->index('teacher_id');
-            $table->index('session_id');
-            $table->index('subject_id');
-            $table->index('clas_id');
+            $table->unsignedBigInteger('arm_id')->nullable();
+            $table->unsignedBigInteger('session_id')->nullable();
+            $table->unsignedBigInteger('added_by');
             $table->timestamps();
         });
     }
@@ -37,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('allocations');
+        Schema::dropIfExists('registered_subjects');
     }
 };

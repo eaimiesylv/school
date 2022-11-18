@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 
-use App\Models\Allocation;
+use App\Models\Registered_subject;
 use Illuminate\Http\Request;
 
-class AllocationController extends Controller
+class RegisteredSubjectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class AllocationController extends Controller
      */
     public function index()
     {
-         return 'ok';
+        //
     }
 
     /**
@@ -37,24 +37,24 @@ class AllocationController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           
-            'teacher_id'=>'required',
-            'register_subject_id'=>'required',
-            'session_id'=>'required',
             'subject_id'=>'required',
             'clas_id'=>'required',
-			'added_by'=>'',
+            'arm_id'=>'',
+            'session_id'=>'required',
+			'added_by'=>''
+    
+    
           ]);
-          return Allocation::create($request->all());
+            return Registered_subject::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Allocation  $allocation
+     * @param  \App\Models\Registered_subject  $registered_subject
      * @return \Illuminate\Http\Response
      */
-    public function show(Allocation $allocation)
+    public function show(Registered_subject $registered_subject)
     {
         //
     }
@@ -62,10 +62,10 @@ class AllocationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Allocation  $allocation
+     * @param  \App\Models\Registered_subject  $registered_subject
      * @return \Illuminate\Http\Response
      */
-    public function edit(Allocation $allocation)
+    public function edit(Registered_subject $registered_subject)
     {
         //
     }
@@ -74,10 +74,10 @@ class AllocationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Allocation  $allocation
+     * @param  \App\Models\Registered_subject  $registered_subject
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Allocation $allocation)
+    public function update(Request $request, Registered_subject $registered_subject)
     {
         //
     }
@@ -85,10 +85,10 @@ class AllocationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Allocation  $allocation
+     * @param  \App\Models\Registered_subject  $registered_subject
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Allocation $allocation)
+    public function destroy(Registered_subject $registered_subject)
     {
         //
     }
